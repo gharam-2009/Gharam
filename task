@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover a wide selection of books at Online Bookstore. Find your next favorite read today!">
+    <meta property="og:title" content="Online Bookstore">
+    <meta property="og:description" content="Discover a wide selection of books at Online Bookstore. Find your next favorite read today!">
+    <meta property="og:image" content="URL-to-a-featured-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Online Bookstore</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #3880c0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a[aria-current="page"] {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .book-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .book-card img {
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .book-card button {
+            background-color: #3880c0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .book-card button:hover {
+            background-color: #2a6f9e;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+            line-height: 1.5;
+        }
+
+        .social-media a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+
+        #cart-counter {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #3f3938;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        #cart-modal {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Online Bookstore</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Books Section -->
+    <section class="books">
+        <div class="book-card">
+            <img src="https://cdn.shopify.com/s/files/1/0625/6679/3413/files/Harry_20Potter_20and_20the_20Deathly_20Hallows.jpg?v=1716708696" alt="Harry Potter Book">
+            <h3>Harry Potter</h3>
+            <p>Price: $10.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="book-card">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSxDeL4OnCtkeYfRkQ3Wb9YFvfXGS-Ove1sJrEBq7-Rk63UrAMD0mG56u90LPmDOlEkcyxuQmEEHItEKxsP3b2zIfJB6C_Pog23GpkDP7XANTZbb6dg35npww&usqp=CAE" alt="Powerful Book">
+            <h3>Powerful</h3>
+            <p>Price: $15.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="book-card">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSMNv_x1YeTE5Pe1kPbfgtygy9T7ELOL0OUQbiDWnQTU5veISjcSSd5UaXXE_9k8OYucEprPaore0LcWtEuwXHWPMeAEUrxX8v3zeIwZgXo&usqp=CAE" alt="The Four Winds Book">
+            <h3>The Four Winds</h3>
+            <p>Price: $12.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="book-card">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRMCrBEV3_eFCPme7sIVuDaIA6JljjbvsO7e3g_2u7tM61kI8FsDDy0Pc7TvdZ53uL7azTnacVUjW_TS1wC33iUEoFksJa_6tDP9euhxmvwkPgVIUpyrxxm&usqp=CAE" alt="Leave The World Behind Book">
+            <h3>Leave The World Behind</h3>
+            <p>Price: $9.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="book-card">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRfnctkuxHLwSCSviXZqsHKnBbBqKvNbKQdmtxP1TIpO7BVECLGleyEk3FqHQP6jdh0HooiD4GY_dKXRgTHHTgXJAQ4q7fP-At2Co_ZWYeD1U0rGHE7-ZqZBw&usqp=CAE" alt="All The Light We Cannot See Book">
+            <h3>All The Light We Cannot See</h3>
+            <p>Price: $20.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <button id="close-cart">Close</button>
+    </div>
+
+    <button id="view-cart">View Cart</button>
+    <div id="cart-counter">Cart: 0</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Online Bookstore. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#" aria-label="Visit our Facebook">Facebook</a>
+            <a href="#" aria-label="Visit our Twitter">Twitter</a>
+            <a href="#" aria-label="Visit our Instagram">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        const cartCounter = document.getElementById("cart-counter");
+        const cartModal = document.getElementById("cart-modal");
+        const viewCartButton = document.getElementById("view-cart");
+        const closeCartButton = document.getElementById("close-cart");
+        const cartItemsDiv = document.getElementById("cart-items");
+
+        document.querySelectorAll(".book-card button").forEach((button, index) => {
+            button.addEventListener("click", () => {
+                const bookTitle = document.querySelectorAll(".book-card h3")[index].textContent;
+                const bookPrice = parseFloat(document.querySelectorAll(".book-card p")[index].textContent.replace("Price: $", ""));
+
+                const existingBook = cart.find(item => item.title === bookTitle);
+                if (existingBook) {
+                    existingBook.quantity += 1;
+                } else {
+                    cart.push({ title: bookTitle, price: bookPrice, quantity: 1 });
+                }
+
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCounter.textContent = `Cart: ${totalItems}`;
+                showNotification(`${bookTitle} added to cart!`);
+            });
+        });
+
+        viewCartButton.addEventListener("click", () => {
+            cartItemsDiv.innerHTML = cart.map(item => `
+                <p>${item.title} - $${item.price.toFixed(2)} x ${item.quantity}</p>
+            `).join('');
+            cartModal.style.display = "block";
+        });
+
+        closeCartButton.addEventListener("click", () => {
+            cartModal.style.display = "none";
+        });
+
+        function showNotification(message) {
+            const notification = document.createElement("div");
+            notification.textContent = message;
+            notification.style.position = "fixed";
+            notification.style.bottom = "10px";
+            notification.style.right = "10px";
+            notification.style.padding = "10px";
+            notification.style.backgroundColor = "#3880c0";
+            notification.style.color = "white";
+            notification.style.borderRadius = "5px";
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
